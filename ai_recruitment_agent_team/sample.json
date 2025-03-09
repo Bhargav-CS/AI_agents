@@ -1,0 +1,131 @@
+{
+    "endpoint": "https://api.yourapp.com/schedule-request",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+    },
+    "body": {
+      "organizer": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "user_id": "12345"
+      },
+      "meeting_request_details": {
+        "title": "Project Kickoff Meeting",
+        "description": {
+          "interview": "A discussion between the interviewer and the candidate to assess skills, experience, and suitability for the role.",
+          "doctor_appointment": "A consultation session between the doctor and the patient to discuss medical concerns and potential treatments.",
+          "vehicle_servicing": "An appointment for a customer to bring in their vehicle for maintenance or repairs.",
+          "sales_trial": "A scheduled session for a customer to test-drive or evaluate a new vehicle before making a purchase decision."
+        },
+        "meeting_type": "interview",
+        "preferred_date_range": {
+          "start": "2025-03-01",
+          "end": "2025-03-05"
+        },
+        "preferred_duration": "60 minutes",
+        "location": {
+          "type": "either",
+          "offline_details": {
+            "address": "123 Main Street, New York, NY, USA",
+            "room": "Conference Room A"
+          },
+          "online_details": {
+            "enabled": true,
+            "platform": "Zoom",
+            "meeting_link": "",
+            "meeting_id": "",
+            "passcode": ""
+          }
+        },
+        "agenda": {
+          "enabled": false,
+          "details": {
+            "interview": [
+              { "topic": "Candidate Introduction", "duration": "15 minutes" },
+              { "topic": "Technical Assessment", "duration": "30 minutes" },
+              { "topic": "Q&A and Wrap-up", "duration": "15 minutes" }
+            ],
+            "doctor_appointment": [
+              { "topic": "Patient Symptoms Discussion", "duration": "20 minutes" },
+              { "topic": "Medical Examination", "duration": "20 minutes" },
+              { "topic": "Treatment Plan Discussion", "duration": "20 minutes" }
+            ],
+            "vehicle_servicing": [
+              { "topic": "Vehicle Inspection", "duration": "20 minutes" },
+              { "topic": "Service and Repairs", "duration": "30 minutes" },
+              { "topic": "Final Quality Check & Handover", "duration": "10 minutes" }
+            ],
+            "sales_trial": [
+              { "topic": "Customer Requirements Discussion", "duration": "15 minutes" },
+              { "topic": "Vehicle Test Drive", "duration": "30 minutes" },
+              { "topic": "Pricing and Financing Options", "duration": "15 minutes" }
+            ]
+          }
+        }
+      },
+      "participants": [
+        {
+          "meeting_type": "interview",
+          "role": "interviewer",
+          "name": "Jane Smith",
+          "email": "jane.smith@example.com",
+          "user_id": "67890",
+          "timezone": "America/New_York",
+          "whatsapp_number": "+1234567890",
+          "preferred_timeslots": "Any weekday between 2 PM to 5 PM", 
+          "calendar_availability": {
+            "platform": "google_calendar", 
+            "email": "jane.smith@example.com"
+          }
+        },
+        {
+          "meeting_type": "interview",
+          "role": "candidate",
+          "name": "Alice Johnson",
+          "email": "alice.johnson@example.com",
+          "user_id": "54321",
+          "timezone": "Europe/London",
+          "whatsapp_number": "+447123456789",
+          "preferred_timeslots": "On weekends after 1 PM",
+          "calendar_availability": {
+            "platform": "microsoft_teams",
+            "email": "alice.johnson@example.com"
+          }
+        }
+      ],
+      "communication": {
+        "send_via": ["whatsapp", "email", "sms"],
+        "calendar_link": "https://calendar.example.com/schedule-link",
+        "chatbot_link": "https://chatbot.example.com/confirm-appointment",
+        "actions": ["confirm", "request_different_time", "cancel", "reschedule"]
+      },
+      "attachments": [
+        {
+          "file_name": "Project_Plan.pdf",
+          "file_url": "https://example.com/files/project_plan.pdf"
+        }
+      ],
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "reminders": [
+          {
+            "type": "email",
+            "time_before": "30 minutes"
+          },
+          {
+            "type": "popup",
+            "time_before": "5 minutes"
+          }
+        ]
+      },
+      "metadata": {
+        "created_by": "John Doe",
+        "created_at": "2025-02-16T12:00:00Z"
+      }
+    }
+   }
+   
+    
